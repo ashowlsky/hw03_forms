@@ -12,6 +12,8 @@
     </head>
     <body>
         {% include 'nav.html' %}
+        {% block group_name %} {% endblock %}
+        {% block group_description %} {% endblock %}
         <main>
             <div class="container">
                 {% block content %}
