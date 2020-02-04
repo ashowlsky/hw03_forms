@@ -18,6 +18,8 @@ def new_post(request):
         if form.is_valid():
             Post.text = form.cleaned_data['text']
             Post.group = form.cleaned_data['group']
+            n_post.author = request.user
+            n_post.save()
             return redirect('index')
         return render(request, 'new.html', {'form':form})
     form = PostForm()
