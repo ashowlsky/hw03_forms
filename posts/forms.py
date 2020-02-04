@@ -5,12 +5,6 @@ class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ('group', 'text',)
-        required= {
-            'group': False,
-        }
-        widgets = {
-            'text': Textarea,
-        }
 
     def check_text(self):
         checked_text = self.cleaned_data['text']
